@@ -1,0 +1,116 @@
+<!--
+* File Name    : RegistrationForm.html
+* File Path    : C:\Users\mukeshg\Desktop\Internship\RegistrationFormJquery\HTML
+* Description  : Creation of form and displaying entered data in form in table using Bootstrap CSS
+* Created date : 21/01/2019
+* Author       : @Mukesh
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Registration Page</title>
+  </head>
+  <body>
+    <h1><center>Register Yourself!</center></h1>
+    <form id="register_form" style="margin:10px; padding: 10px">
+        <label><i>Fill out the form to register</i></label>
+            <div class="form-group">
+                <label for="inputName">Name</label>
+                <input type="text" class="form-control" id="first_name" autocomplete="off" placeholder="Name">
+                <span class="errorMessage" id="name_Error"></span>
+            </div>
+            <div class="form-row">
+                <div class='form-group col-md-4'>
+                    <label for="inputGender">Gender</label>
+                    <select class="form-control" autocomplete="off" id="sex">
+                        <option selected disabled>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option><br>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputdob">Birth Date</label>
+                    <input type="date" class="form-control" placeholder="Date of Birth" id="birth_date">
+                    <span class="errorMessage" id="birth_date_Error"></span>   
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputPhone">Phone Number</label>
+                    <input type="text" maxlength="10" onkeypress="return isNumberKey(event)" autocomplete="off" class="form-control" id="phone_number" placeholder="Mobile Number">   
+                    <span class="errorMessage" id="phone_Error"></span>
+                </div>       
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                        <label for="country">Country</label>
+                        <select class="form-control" id="country">
+                                <option value="">Select country</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="state">State</label>
+                        <select id="state" class="form-control">
+                            <option selected>Select state</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="city">City</label>
+                        <select class="form-control" id="city">
+                                <option value="">Select city</option>
+                        </select>
+                    </div>
+                    <span class="errorMessage" id="country_Error"></span>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="user_email" autocomplete="off" placeholder="Email">
+                <span class="errorMessage" id="email_Error"></span>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="user_addr" autocomplete="off" placeholder="Address">
+              <span class="errorMessage" id="user_addr_Error"></span>
+            </div>
+            <div class="form-group">
+                <label for="inputAbout">About Yourself</label>
+                <textarea id="about_user" class="form-control" rows="5" cols="20" autocomplete="off" placeholder="Write about yourself here..."></textarea>
+                <span class="errorMessage" id="about_user_Error"></span>
+            </div>          
+            <input type="button" id="submit_btn" value="Register" class="btn btn-primary btn-lg btn-block btn-huge">
+            <input type="button" value="Update" id="b_Update" class="btn btn-success btn-lg btn-block btn-huge">
+            <input type="button" id="reset_btn" value="Reset" class="btn btn-secondary btn-lg btn-block btn-huge">
+            
+    </form>
+    <table id="table_user" class="table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+		    <th>Gender</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Phone Number</th>
+            <th>Date of Birth</th>
+            <th>E-Mail</th>
+            <th>Address</th>
+            <th>About</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody id="user_data">
+        </tbody>
+      </table>
+    <!-- Optional JavaScript -->
+    <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" ></script>
+    <script language="javascript" type="text/javascript" src="RegistrationFormJquery.js"></script>
+  </body>
+</html>
